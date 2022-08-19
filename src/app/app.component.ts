@@ -17,14 +17,31 @@ export class AppComponent {
     this.products.push(new Product(3,"oto","https://menback.com/wp-content/uploads/2022/01/xe-o-to-dat-nhat-the-gioi-menback.jpg",500))
   }
 
-  create(): void{
-    this.products.push(this.product);
-    this.product = new Product(0,"","",0);
+  createAndEdit(product: Product): void{
+    let  index = this.findIndexById(product.id);
+    if(index!= -1){
+      this.products[index] = product;
+    }else {
+      this.products.push(product);
+    }
   }
 
   delete(index: number): void{
     this.products.splice(index,1);
   }
 
+
+  showEdit(index:number){
+    this.product = this.products[index];
+  }
+
+  findIndexById(id:number){
+    for (let i = 0; i < this.products.length; i++) {
+      if(this.products[i].id == id){
+        return i;
+      }
+    }
+    return -1;
+  }
 
 }
