@@ -22,10 +22,10 @@
       <td>{{p.price}}</td>
       <td><img src="{{p.img}}" width="250" height="200"></td>
       <td>
-        <button type="button" class="btn btn-warning" (click)="showEdit(i)">Edit</button>
+        <button type="button" class="btn btn-warning" (click)="crudProduct.getEdit(p.id)" >Edit</button>
       </td>
       <td>
-        <button type="button" class="btn btn-danger" (click)="delete(i)">Delete</button>
+        <button type="button" class="btn btn-danger" (click)="crudProduct.delete(i)">Delete</button>
       </td>
     </tr>
     </tbody>
@@ -36,43 +36,43 @@
 
 
 <!-- The Modal -->
-<div class="modal" id="myModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
+<!--<div class="modal" id="myModal">-->
+<!--  <div class="modal-dialog">-->
+<!--    <div class="modal-content">-->
 
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title">Modal Create Product</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
+<!--      &lt;!&ndash; Modal Header &ndash;&gt;-->
+<!--      <div class="modal-header">-->
+<!--        <h4 class="modal-title">Modal Create Product</h4>-->
+<!--        <button type="button" class="close" data-dismiss="modal">&times;</button>-->
+<!--      </div>-->
 
-      <!-- Modal body -->
-      <div class="modal-body">
-        <table>
-          <tr>
-            <td><input placeholder="nhập id" [(ngModel)]="product.id"></td>
-          </tr>
-          <tr>
-            <td><input placeholder="nhập name" [(ngModel)]="product.name"></td>
-          </tr>
-          <tr>
-            <td><input placeholder="nhập price" [(ngModel)]="product.price"></td>
-          </tr>
-          <tr>
-            <td><input placeholder="nhập image" [(ngModel)]="product.img"></td>
-          </tr>
-        </table>
-      </div>
+<!--      &lt;!&ndash; Modal body &ndash;&gt;-->
+<!--      <div class="modal-body">-->
+<!--        <table>-->
+<!--          <tr>-->
+<!--            <td><input placeholder="nhập id" [(ngModel)]="product.id"></td>-->
+<!--          </tr>-->
+<!--          <tr>-->
+<!--            <td><input placeholder="nhập name" [(ngModel)]="product.name"></td>-->
+<!--          </tr>-->
+<!--          <tr>-->
+<!--            <td><input placeholder="nhập price" [(ngModel)]="product.price"></td>-->
+<!--          </tr>-->
+<!--          <tr>-->
+<!--            <td><input placeholder="nhập image" [(ngModel)]="product.img"></td>-->
+<!--          </tr>-->
+<!--        </table>-->
+<!--      </div>-->
 
-      <!-- Modal footer -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Create</button>
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-      </div>
+<!--      &lt;!&ndash; Modal footer &ndash;&gt;-->
+<!--      <div class="modal-footer">-->
+<!--        <button type="button" class="btn btn-primary" data-dismiss="modal">Create</button>-->
+<!--        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>-->
+<!--      </div>-->
 
-    </div>
-  </div>
+<!--    </div>-->
+<!--  </div>-->
 
-</div>
-<app-create-product [productInput]="product" (createEvent)="createAndEdit($event)"></app-create-product>
+<!--</div>-->
+<app-create-product></app-create-product>
 
